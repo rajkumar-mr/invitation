@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Birthday Invitation</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://img.freepik.com/free-vector/happy-birthday-golden-silver-balloons-with-confetti_1017-29992.jpg?t=st=1745913914~exp=1745917514~hmac=ac2b4b8a98767f0af456149235a3f864c88ddcf3d4e76619ffffb414f75d722a&w=900');
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: #333;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 5rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      max-width: 400px;
+      text-align: center;
+      transition: all 0.4s ease;
+    }
+
+    .card h1 {
+      font-size: 2rem;
+      color: #ff4e8b;
+    }
+
+    .card p {
+      margin: 1rem 0;
+    }
+
+    .btn {
+      background-color: #ff4e8b;
+      color: white;
+      padding: 100px 150px;
+      margin: 0.5rem;
+      border: none;
+      border-radius: 25px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #e0437c;
+    }
+
+    .thank-you {
+      font-size: 1.5rem;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card" id="invitationCard">
+    <h1>🎂 You're Invited!</h1>
+    <p>Join us to celebrate <strong>Thara's 1th Birthday</strong>!</p>
+    <p><strong>Date:</strong> JUNE 17th, 2025</p>
+    <p><strong>Time:</strong> 5:00 PM - 7:00 PM</p>
+    <p><strong>Location:</strong> North street Ariyakudi</p>
+    <button class="button" onclick="showThankYou()">Thank You for Visiting</button>
+    <button class="button" onclick="openInGPS()">Open Address in GPS</button>
+  </div>
+
+  <script>
+    function showThankYou() {
+      const card = document.getElementById('invitationCard');
+      card.innerHTML = `<h1 class="thank-you">🎉 Thank you for visiting! 🎉</h1>`;
+    }
+
+    function openInGPS() {
+      const address = encodeURIComponent("North street Ariyakudi");
+      const url = `https://www.google.com/maps/@10.0450034,78.7892058,3a,75y,320.66h,93.27t/data=!3m7!1e1!3m5!1s5WzG12VQP9wZY-oqVHytEQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.269999999999996%26panoid%3D5WzG12VQP9wZY-oqVHytEQ%26yaw%3D320.66!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDQyMy4wIKXMDSoASAFQAw%3D%3D${address}`;
+      window.open(url, '_blank');
+    }
+  </script>
+
+</body>
+</html>
